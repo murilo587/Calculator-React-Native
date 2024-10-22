@@ -1,15 +1,16 @@
-import { Text, Pressable, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const Button = ({ color, text }) => {
+const Button = ({ color, text, onPress }) => {
   return (
-    <Pressable style={[styles.BtnBlackGray, {backgroundColor: {color}}]}>
+    <TouchableOpacity style={[styles.button, {backgroundColor: color}]} onPress={onPress}>
       <Text style={styles.textBtn}>{text}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  BtnBlackGray: {
+  button: {
+    backgroundColor: 'white',
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
